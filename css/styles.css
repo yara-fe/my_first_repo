@@ -1,0 +1,45 @@
+/* ----------------------------------------
+CSS RESET
+-----------------------------------------*/
+
+html {
+	box-sizing: border-box;
+	font-size: 16px;
+	font-family: 'Inter', sans-serif;
+	color: var(--black);
+	scroll-behavior: smooth;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+
+ol,
+ul {
+	list-style: none;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+/* ----------------------------------------
+HEADER SECTION 
+-----------------------------------------*/
+
+header nav ul {
+    display: flex;
+    gap: 24px;
+    margin-right: 16px;
+}
