@@ -1,3 +1,6 @@
+/* Import font-family */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Raleway:wght@100;200;300;400;600&display=swap');
 /* ----------------------------------------
 CSS RESET
 -----------------------------------------*/
@@ -5,11 +8,16 @@ CSS RESET
 html {
 	box-sizing: border-box;
 	font-size: 16px;
-	font-family: 'Inter', sans-serif;
+	font-family: 'Raleway', sans-serif; 
 	color: var(--black);
 	scroll-behavior: smooth;
+	background-color: #fffdfa;
 }
 
+body, html {
+	margin:0;
+	padding:0;
+}
 *,
 *:before,
 *:after {
@@ -38,8 +46,76 @@ select {
 HEADER SECTION 
 -----------------------------------------*/
 
-header nav ul {
-    display: flex;
-    gap: 24px;
-    margin-right: 16px;
+/* Desktop Mode */
+@media (min-width: 768px) {
+
+	/* Right-align header*/
+    header {
+        height: 75px;
+		display: flex;
+        justify-content: flex-end;
+		align-items: center;
+		background-color: #295E11;
+		
+    }
+
+	/* Display the nav items in a row */
+	header nav ul {
+		display: flex;
+		gap: 24px;
+		margin-right: 50px;
+	}
+
+	/* Style the links in the nav bar */
+	header a {
+		text-decoration: none;
+		color: #ffffff;
+		font-size: 1.25em;
+	}
+	
+}
+
+
+/* ----------------------------------------
+HEADER SECTION 
+-----------------------------------------*/
+#hero-banner {
+	/* Sizing */
+	width: 100vw;
+	height: 100vh;
+
+	/* Change colour for easier formatting */
+	background-color: #40466B;  
+
+	/* Flexbox */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+/* Adjust personal logo sizing */
+.hero-image {
+	width: 500px;
+	height: auto;
+}
+
+.hero-text h1 {
+	font-size: 2em;
+	font-family: 'Playfair Display', serif;
+}
+
+/* ----------------------------------------
+PROJECTS SECTION 
+-----------------------------------------*/
+
+/* Desktop Mode */
+@media (min-width: 768px) {
+	
+	/* Display first row of projects in a row */
+	.firstRow, .secondRow {
+		display: flex;
+		justify-content: space-between;
+	}
 }
