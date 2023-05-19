@@ -113,9 +113,50 @@ PROJECTS SECTION
 /* Desktop Mode */
 @media (min-width: 768px) {
 	
-	/* Display first row of projects in a row */
+	/* Display projects in a 4 x 4 grid */
 	.firstRow, .secondRow {
 		display: flex;
 		justify-content: space-between;
 	}
+}
+
+/* ----------------------------------------
+FOOTER 
+-----------------------------------------*/
+
+#footer {
+	background-color: #295E11;
+	padding: 25px;
+	display: flex;
+	align-items: center;
+
+/* Format social icons */
+.socials {
+    margin: 0px auto;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+	align-items: center;
+	
+}
+
+.socials a i {
+	color: #fffdfa;
+	width: 50px;
+}
+
+/* Format copyright details*/
+.footer-text p {
+	color:#fffffa;
+}
+
+/* Footer nav bar */
+.footer-nav ul {
+	display: flex;
+}
+
+.footer-nav ul li a{
+	color: #fffdfa;
+	text-decoration: none;
+	padding-left: 15px;
 }
