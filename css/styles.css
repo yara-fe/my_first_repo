@@ -1,6 +1,18 @@
 /* Import font-family */
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Raleway:wght@100;200;300;400;600&display=swap');
+
+:root {
+	--green: #44693D;
+	/* --purple: #40466B; */
+	--purple: #600080;
+	--lightbrown: #e4ccc0;
+	--white: #fffdfa;
+    --grey: #363737;
+    --black: #010101;
+}
+
+
 /* ----------------------------------------
 CSS RESET
 -----------------------------------------*/
@@ -35,11 +47,29 @@ img {
 	height: auto;
 }
 
-input,
+/* input, */
 button,
-textarea,
+/* textarea, */
 select {
 	font: inherit;
+}
+
+
+input, textarea, ::placeholder {
+	color: #fffdfa;
+	font-size: 1.2 em;
+}
+
+footer {
+	color: #fffdfa;
+}
+
+/* ----------------------------------------
+GLOBAL STYLING
+-----------------------------------------*/
+html h1,h2,h3,h4,h5,h6 {
+	color: var(--purple);
+	font-family: 'Playfair Display', serif;
 }
 
 /* ----------------------------------------
@@ -53,9 +83,9 @@ HEADER SECTION
     header {
         height: 75px;
 		display: flex;
-        justify-content: flex-end;
+        justify-content: space-between;
 		align-items: center;
-		background-color: #295E11;
+		background-color: #44693D;
 		
     }
 
@@ -85,7 +115,7 @@ HEADER SECTION
 	height: 100vh;
 
 	/* Change colour for easier formatting */
-	background-color: #40466B;  
+	border: solid 2px #40466B;  
 
 	/* Flexbox */
 	display: flex;
@@ -97,13 +127,12 @@ HEADER SECTION
 
 /* Adjust personal logo sizing */
 .hero-image {
-	width: 500px;
+	width: 300px;
 	height: auto;
 }
 
 .hero-text h1 {
 	font-size: 2em;
-	font-family: 'Playfair Display', serif;
 }
 
 /* ----------------------------------------
@@ -121,41 +150,98 @@ PROJECTS SECTION
 }
 
 /* ----------------------------------------
+CONTACT FORM 
+-----------------------------------------*/
+#contact {
+	background-color: #44693D;
+}
+
+#contact p , #contact h2 {
+	color: var(--white);
+}
+
+.smallerTextContact {
+	color:bisque;
+	font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+.contact-info {
+    display: flex;
+	flex-direction: column;
+    padding-right: 48px;
+	width: 100%;
+	/* top | left & right | bottom */
+	/* padding: 50px 100px 50px; */
+	/* border: 2px solid red; */
+}
+
+/* Desktop Mode
+- divide contact section into 2 columns 
+- display contact info on the left
+- display contact form on the right */
+
+@media (min-width: 768px) {
+	
+	.contact-container {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		background-color: #44693D;
+		padding: 24px;
+	}
+
+	.contact-info, .contact-form {
+		width: 50%;
+		padding: 0px;
+	}
+}
+
+
+
+/* format social icons */
+.fa-brands {
+	color: #fffdfa;
+	padding: 10px;
+	font-size:25px;
+}
+
+/* display icons in a row */
+ul.social-icons li{
+	display: inline-block;
+	margin: 16px;
+}
+
+/* format the form */
+.form-input {
+	border: 0;
+	background: none;
+	border-bottom: 1px solid #fffdfa;
+}
+
+.contact-form form {
+	display: flex;
+	flex-direction: column;
+}
+
+/* ----------------------------------------
 FOOTER 
 -----------------------------------------*/
 
 #footer {
-	background-color: #295E11;
-	padding: 25px;
+	background-color: #44693D;
 	display: flex;
-	align-items: center;
-
-/* Format social icons */
-.socials {
-    margin: 0px auto;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-	align-items: center;
-	
+	justify-content: flex-start;
+	flex-direction: column;
+	padding: 0px 0px 25px;
 }
 
-.socials a i {
-	color: #fffdfa;
-	width: 50px;
-}
-
-/* Format copyright details*/
-.footer-text p {
-	color:#fffffa;
-}
-
-/* Footer nav bar */
+/* Footer nav bar in a row*/
 .footer-nav ul {
 	display: flex;
 }
 
-.footer-nav ul li a{
+/* Footer nav bar formatting */
+.footer-nav ul li a {
 	color: #fffdfa;
 	text-decoration: none;
 	padding-left: 15px;
