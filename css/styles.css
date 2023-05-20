@@ -190,13 +190,16 @@ CONTACT FORM
 		padding: 24px;
 	}
 
-	.contact-info, .contact-form {
+	.contact-info {
 		width: 50%;
 		padding: 0px;
 	}
+
+	.contact-form {
+		width: 50%;
+		padding: 20px;
+	}
 }
-
-
 
 /* format social icons */
 .fa-brands {
