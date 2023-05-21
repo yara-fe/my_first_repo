@@ -3,8 +3,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Raleway:wght@100;200;300;400;600&display=swap');
 
 :root {
+
+	/* color scheme */
 	--green: #44693D;
-	/* --purple: #40466B; */
 	--purple: #600080;
 	--lightbrown: #e4ccc0;
 	--white: #fffdfa;
@@ -23,7 +24,7 @@ html {
 	font-family: 'Raleway', sans-serif; 
 	color: var(--black);
 	scroll-behavior: smooth;
-	background-color: #fffdfa;
+	background-color: var(--white);
 }
 
 body, html {
@@ -36,7 +37,6 @@ body, html {
 	box-sizing: inherit;
 }
 
-
 ol,
 ul {
 	list-style: none;
@@ -47,75 +47,131 @@ img {
 	height: auto;
 }
 
-/* input, */
-button,
-/* textarea, */
-select {
+button {
+	font:inherit;
+}
+input,
+textarea,
+select,
+::placeholder {
 	font: inherit;
-}
-
-
-input, textarea, ::placeholder {
-	color: #fffdfa;
+	color: var(--white);
 	font-size: 1.2 em;
-}
-
-footer {
-	color: #fffdfa;
 }
 
 /* ----------------------------------------
 GLOBAL STYLING
 -----------------------------------------*/
+#contact , #footer, header {
+	background-color: var(--green);
+	color: var(--white);
+}
+
 html h1,h2,h3,h4,h5,h6 {
 	color: var(--purple);
 	font-family: 'Playfair Display', serif;
 }
 
+#contact h2 {
+	color: var(--lightbrown);
+}
+
+/* remove links underline and format according to theme */
+nav li a {
+	text-decoration: none;
+	color: var(--white);
+}
+
+/* hover animation over nav links */
+nav li a:hover {
+		border-bottom: 2px solid var(--lightbrown);
+		font-weight: 700;
+	}
+
+
+button {
+	cursor: pointer;
+	background-color: transparent;
+	border: 2px solid var(--lightbrown);
+	border-radius: 10px;
+	color: var(--white);
+}
+
+button:hover {
+	color: var(--black);
+	background-color: var(--lightbrown);
+	font-weight: 700;
+}
+
+
+
 /* ----------------------------------------
 HEADER SECTION 
 -----------------------------------------*/
 
+.hamburger-button {
+	border: none;
+}
+
+.header-logo {
+	width: 75px;
+}
+
+nav .contact-btn {
+	font-size: 1.25em;
+	margin-left: 40px;
+}
+
+.desktop-nav {
+	display: none;
+}
+
+.header-wrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
 /* Desktop Mode */
 @media (min-width: 768px) {
 
-	/* Right-align header*/
-    header {
-        height: 75px;
-		display: flex;
-        justify-content: space-between;
+	/* Place the 3 items in the header in a row withe spaces in between */
+	header {
+		display:flex;
 		align-items: center;
-		background-color: #44693D;
-		
-    }
+		justify-content: space-between;
+		padding: 24px;
+	}
+
+	/* Display the About, Portfolio and Contact button in a row */
+	.desktop-nav {
+		display: flex;
+	}
+
+	/* remove links underline and format according to theme */
+	.desktop-nav li a {
+		font-size: 1.25em;
+	}
 
 	/* Display the nav items in a row */
 	header nav ul {
 		display: flex;
-		gap: 24px;
-		margin-right: 50px;
+		gap: 40px;
 	}
 
-	/* Style the links in the nav bar */
-	header a {
-		text-decoration: none;
-		color: #ffffff;
-		font-size: 1.25em;
+	/* remove hamburger icon */
+	.hamburger-button, .mobile-nav {
+		display: none;
 	}
-	
 }
 
-
 /* ----------------------------------------
-HEADER SECTION 
+HERO BANNER 
 -----------------------------------------*/
 #hero-banner {
 	/* Sizing */
 	width: 100vw;
 	height: 100vh;
-
-	/* Change colour for easier formatting */
-	border: solid 2px #40466B;  
 
 	/* Flexbox */
 	display: flex;
@@ -139,27 +195,87 @@ HEADER SECTION
 PROJECTS SECTION 
 -----------------------------------------*/
 
+#projects {
+	padding: 100px 50px;
+	text-align: center;
+}
+
+#projects img {
+	width: 100%;
+	border-radius: 60px;
+}
+
+.portfolio-one-cntr,
+.portfolio-two-cntr,
+.portfolio-three-cntr,
+.portfolio-four-cntr {
+	width: 500px;
+	position: relative;
+	margin: 16px;
+}
+
+.overlay{
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	padding: 10px;
+	position: absolute;
+	border-radius: 60px;
+	background-color: rgba(0,0,0,0.9);
+	transition: 0.6s ease;
+	text-align: center;
+	cursor: pointer;
+	opacity: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	/* display: none; */
+}
+
+.overlay:hover {
+	opacity: 1;
+}
+
+.overlay h3 {
+	color: var(--lightbrown);
+}
+
+.overlay p, li {
+	color: var(--white);
+}
+
 /* Desktop Mode */
 @media (min-width: 768px) {
 	
 	/* Display projects in a 4 x 4 grid */
 	.firstRow, .secondRow {
 		display: flex;
-		justify-content: space-between;
+		justify-content: center;
+		align-items: center;
+		
 	}
+
 }
 
 /* ----------------------------------------
-CONTACT FORM 
+ABOUT ME
 -----------------------------------------*/
-#contact {
-	background-color: #44693D;
+#aboutme, #personal-note {
+	padding: 40px 100px;
+	text-align: center;
 }
 
-#contact p , #contact h2 {
-	color: var(--white);
+.my-portrait {
+	width: 500px;
+	display: inline-block;
+	justify-content: center;
 }
 
+/* ----------------------------------------
+FOOTER - CONTACT SECTION 
+-----------------------------------------*/
 .smallerTextContact {
 	color:bisque;
 	font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
@@ -168,11 +284,57 @@ CONTACT FORM
 .contact-info {
     display: flex;
 	flex-direction: column;
-    padding-right: 48px;
-	width: 100%;
-	/* top | left & right | bottom */
-	/* padding: 50px 100px 50px; */
-	/* border: 2px solid red; */
+	align-items: center;
+	justify-content: center;
+}
+
+/* center align contact message */
+.contact-info p {
+	text-align: center;
+}
+
+/* display icons in a row */
+.social-icons li{
+	display: inline-block;
+	margin: 16px;
+}
+
+/* format social icons */
+.fa-brands {
+	color: #fffdfa;
+	padding: 10px;
+	font-size:32px;
+}
+
+.contact-form {
+	justify-content: center;
+	padding: 16px;
+}
+
+
+/* format the form to be minimalist */
+.form-input {
+	border: 0;
+	background: none;
+	border-bottom: 2px solid var(--lightbrown);
+	padding: 8px;
+	margin: 8px;
+}
+
+/* display the form objects vertically and centered */
+.contact-form form {
+	display: flex;
+	flex-direction: column;
+	margin: 0px auto;
+	max-width: 400px;
+}
+
+/* set button to a smaller size than form and align center */
+.send-btn {
+	width: 60%;
+	align-self: center;
+	margin-top: 24px;
+	padding: 10px;
 }
 
 /* Desktop Mode
@@ -182,70 +344,47 @@ CONTACT FORM
 
 @media (min-width: 768px) {
 	
+	/* display the contact info and form in a 1x2 grid */
 	.contact-container {
 		display: flex;
 		justify-content: space-between;
-		width: 100%;
-		background-color: #44693D;
-		padding: 24px;
 	}
 
+	/* set info width to 50% of the screen */
 	.contact-info {
 		width: 50%;
-		padding: 0px;
+		text-align: center;
 	}
 
+	/* set form width to 50% of the screen */
 	.contact-form {
 		width: 50%;
-		padding: 20px;
 	}
 }
 
-/* format social icons */
-.fa-brands {
-	color: #fffdfa;
-	padding: 10px;
-	font-size:25px;
-}
-
-/* display icons in a row */
-ul.social-icons li{
-	display: inline-block;
-	margin: 16px;
-}
-
-/* format the form */
-.form-input {
-	border: 0;
-	background: none;
-	border-bottom: 1px solid #fffdfa;
-}
-
-.contact-form form {
-	display: flex;
-	flex-direction: column;
-}
 
 /* ----------------------------------------
 FOOTER 
 -----------------------------------------*/
 
 #footer {
-	background-color: #44693D;
+	padding: 24px;
+}
+
+.footer-info {
 	display: flex;
-	justify-content: flex-start;
 	flex-direction: column;
-	padding: 0px 0px 25px;
+	align-items: center;
 }
 
 /* Footer nav bar in a row*/
 .footer-nav ul {
 	display: flex;
+	gap: 24px;
 }
 
 /* Footer nav bar formatting */
 .footer-nav ul li a {
-	color: #fffdfa;
+	color: var(--white);
 	text-decoration: none;
-	padding-left: 15px;
 }

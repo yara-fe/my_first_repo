@@ -9,27 +9,36 @@
 </head>
 <body>
     <header>
+        <section class="header-wrapper">
         <div class=logo>
-            <a href="index.html"><img src="img/YaraLogo.png" width="75px" height="auto"></a>
+            <a href="index.html"><img src="img/YaraLogo.png" class="header-logo"></a>
         </div>
+        <div mobile-header>
+            <button class="hamburger-button">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="40" height="40" viewBox="0,0,256,256" style="fill:#000000;">
+                <g fill="#fffdfa" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.33333,5.33333)"><path d="M6,22h36v4h-36zM6,10h36v4h-36zM6,34h36v4h-36z"></path></g></g>
+                </svg>               
+			</button> 
+        </div>
+        </section>
         <nav class="desktop-nav">
             <ul>
-                <li>
-                    <a href="about.html">About</a>
-                </li>
-                <li>
-                    <a href="">Porfolio</a>
-                </li>
-                <li>
-                    <a class="sayhello" href="#contact">
-                        <button>Say Hello!</button>
-                    </a>
-                </li>
+                <li><a href="about.html">About</a></li>
             </ul>
+            <button class="contact-btn">Say Hello!</button><a href="#contact"></a>
         </nav> 
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="about.html">About</a></li>
+                <li><a href="about.html">Porfolio</a></li>
+            </ul>
+            <button class="contact-btn">Say Hello!</button>
+                <a href="#footer"></a>
+        </nav>   
     </header>
+
     <main>
-        <section id="aboutme"> 
+        <section id="aboutme">
             <article class="my-info">
                 <h2 class="hello"> Hi, I am Yara!</h2>
                 <p>
@@ -48,5 +57,61 @@
             </p>
         </section>
     </main>
+        <!-- Footer will consists of social links, contact form, footer navigation bar and copyright message -->
+        <footer id="footer">
+            <section id="contact">
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <h2>Say Hello!</h2>
+                        <p>
+                            Want to chat, grab a coffee
+                            <span class="smallerTextContact">(virtually)</span>
+                            or have feedback? </br> Find me on social media or you can send me a message here!
+                        </p>
+                        <ul class="social-icons">
+                            <li>
+                                <a href="https://instagram.com/yara_dimples/">
+                                    <i class="fa-brands fa-instagram"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.linkedin.com/in/yarafe">
+                                    <i class="fa-brands fa-linkedin-in"></i>
+                                </a> 
+                            </li>
+                            <li>
+                                <a href="https://github.com/yara-fe/">
+                                    <i class="fa-brands fa-github-alt"></i>
+                                </a>
+                            </li>    
+                        </ul>
+                    </div>
+                    <div class="contact-form">
+                        <form action="https://formspree.io/f/xknaeaay" method="POST">       
+                            <input type="text" name="name" id="name" placeholder="Name" autocomplete="off" required="" class="form-input">
+                            <input type="email" name="email" id="email" placeholder="Email" required="" class="form-input">
+                            <textarea name="message" id="message" rows="5" placeholder="Message"  class="form-input"></textarea>
+                            <button class="send-btn" type="submit">send message</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+            <section class="footer-info">
+            <nav class="footer-nav">
+                <ul>
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+                    <li>
+                        <a href="">Say Hello</a>
+                    </li>
+                </ul>
+            </nav>
+            <p class="copyright"> &copy; Yara Tuguinay 2023</p>
+        </section>
+        </footer>
 </body>
 </html>
