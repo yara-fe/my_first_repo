@@ -388,3 +388,11 @@ FOOTER
 	color: var(--white);
 	text-decoration: none;
 }
+
+/* -------------
+UTILITIES 
+----------------*/
+
+.display-none {
+	display: none;
+}
